@@ -178,26 +178,57 @@ void CBasicStringFun_Test(bool bRun)
 		Sleep(100);
 	}
 
+	printf("\n");
 	{
 		CCalcRunTime time("SplitA");
-		char strBufferSplit[] = "10.23,11.23,12.23,,13.23*";
+		char *str = "$CMD12,1.12232323,1,28,200,0000,21.821,0,,1,CMD12,1.12232323,1,28,200,0000,21.821,0,,1CMD12,1.12232323,1,28,200,0000,21.821,0,,1CMD12,1.12232323,1,28,200,0000,21.821,0,,1,*6B";
 		vector<string> vecTemp;
-		CBasicStringFun::SplitA(strBufferSplit, strlen(strBufferSplit), ",", vecTemp);
+		CBasicStringFun::SplitA(str, strlen(str), ",", vecTemp);
 		for (int i = 0; i < int(vecTemp.size()); i++)
 		{
-			printf("%d:%s\n", i, vecTemp.at(i).c_str());
+			//printf("%d:%s\n", i, vecTemp.at(i).c_str());
 		}
+		printf("%d\n", vecTemp.size());
 	}
 
+	printf("\n");
 	{
 		CCalcRunTime time("StringSpliter");
-		char *str = "10.23,11.23,12.23,,13.23*";
+		char *str = "$CMD12,1.12232323,1,28,200,0000,21.821,0,,1,CMD12,1.12232323,1,28,200,0000,21.821,0,,1CMD12,1.12232323,1,28,200,0000,21.821,0,,1CMD12,1.12232323,1,28,200,0000,21.821,0,,1,*6B";
 		StringSpliter string_spliter(str, ",");
 		int n;
 		const char *sec;
 		for (n=0, sec = string_spliter.Next(); sec; sec=string_spliter.Next(), n++) 
 		{
-			printf("%d:%s\n", n, sec);
+			//printf("%d:%s\n", n, sec);
 		}
+		printf("%d\n", n);
+	}
+
+	printf("\n");
+	{
+		CCalcRunTime time("StringSpliterRaw");
+		char *str = "$CMD12,1.12232323,1,28,200,0000,21.821,0,,1,CMD12,1.12232323,1,28,200,0000,21.821,0,,1CMD12,1.12232323,1,28,200,0000,21.821,0,,1CMD12,1.12232323,1,28,200,0000,21.821,0,,1,*6B";
+		char	strTemp[50] = {'\0'};	
+		int		BlockNum = 0;
+		int		BackComma = 0;
+		void*	pEnd = memchr(str, '*', strlen(str));
+		int		nEndPosition = (unsigned char*)pEnd - (unsigned char*)str +1;
+
+		for(int i = 0; i < nEndPosition; i++)
+		{
+			if ( *(str + i )==',' || *( str + i) =='*' )
+			{
+				memset(strTemp, '\0', sizeof(strTemp));
+				memcpy(strTemp, str + BackComma + 1, i- BackComma);
+
+				//printf("%d:%s\n", BlockNum, strTemp);
+
+				BackComma = i;
+				BlockNum++;
+			}
+		}
+
+		printf("%d\n", BlockNum);
 	}
 }
