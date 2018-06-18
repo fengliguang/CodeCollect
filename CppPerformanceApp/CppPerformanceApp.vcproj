@@ -182,6 +182,10 @@
 				RelativePath=".\Main.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\MemoryLeakCheck.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -194,6 +198,10 @@
 			</File>
 			<File
 				RelativePath=".\Lock.h"
+				>
+			</File>
+			<File
+				RelativePath=".\MemoryLeakCheck.h"
 				>
 			</File>
 		</Filter>

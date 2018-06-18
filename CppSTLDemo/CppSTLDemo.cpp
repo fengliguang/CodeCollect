@@ -3,8 +3,9 @@
 int main(int argc, char **argv)
 {
 
-	CStlApplyDemo::DeleteTheRepeatElevment(true);
-
+	CStlApplyDemo::DeleteTheRepeatElevment(false);
+	CStlApplyDemo::SingleSimDemo(false);
+	CStlApplyDemo::VectorStructDataDemo(true);
 
 	system("pause");
 	return 0;
