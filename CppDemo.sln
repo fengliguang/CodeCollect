@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppSTLDemo", "CppSTLDemo\Cp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MutilRandom", "MutilRandom\MutilRandom.vcproj", "{7C19FD4E-4C65-4653-9B5B-FC6FD00B9AD1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadTimer", "ThreadTimer\ThreadTimer.vcproj", "{3327C3C3-B728-4F82-AC41-5272C433C86F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +27,10 @@ Global
 		{7C19FD4E-4C65-4653-9B5B-FC6FD00B9AD1}.Debug|Win32.Build.0 = Debug|Win32
 		{7C19FD4E-4C65-4653-9B5B-FC6FD00B9AD1}.Release|Win32.ActiveCfg = Release|Win32
 		{7C19FD4E-4C65-4653-9B5B-FC6FD00B9AD1}.Release|Win32.Build.0 = Release|Win32
+		{3327C3C3-B728-4F82-AC41-5272C433C86F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3327C3C3-B728-4F82-AC41-5272C433C86F}.Debug|Win32.Build.0 = Debug|Win32
+		{3327C3C3-B728-4F82-AC41-5272C433C86F}.Release|Win32.ActiveCfg = Release|Win32
+		{3327C3C3-B728-4F82-AC41-5272C433C86F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
