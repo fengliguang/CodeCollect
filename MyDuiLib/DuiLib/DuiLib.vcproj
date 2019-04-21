@@ -60,10 +60,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="..\Bin\DuiLib_d.dll"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				ImportLibrary="..\Common\$(TargetName)_d.lib"
+				ImportLibrary="..\Common\DuiLib_d.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -172,10 +173,6 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File
-				RelativePath=".\DuiLib.cpp"
-				>
-			</File>
 			<File
 				RelativePath=".\Stdafx.cpp"
 				>
