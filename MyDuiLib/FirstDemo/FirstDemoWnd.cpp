@@ -62,6 +62,18 @@ LRESULT CFirstDemoWnd::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 		OutputDebugString(L"HandleMessage:WM_DESTROY\n");
 		::PostQuitMessage(0);
 	}
+	else if(WM_NCACTIVATE == uMsg)
+	{
+		if( !::IsIconic(m_hWnd)) 
+		{
+			return (wParam == 0) ? TRUE : FALSE;
+		}
+	}
+	else if(WM_NCCALCSIZE == uMsg) //不使用系统的标题栏和边框这些非客户区绘制
+	{
+		return 0;
+	}
+
 	LRESULT lRes = 0;
 	if(m_pm.MessageHandler(uMsg, wParam, lParam, lRes))
 	{
